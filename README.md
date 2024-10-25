@@ -19,7 +19,7 @@ En un ecosistema empresarial moderno, la implementación y consumo eficiente de 
 
     - Bronce: Datos crudos.
     - Silver: Datos integrados y gobernados.
-     Gold: Datos listos para el consumo analítico y modelos finales.
+    - Gold: Datos listos para el consumo analítico y modelos finales.
     
     Además, Databricks se apoya en Unity Catalog, que asegura la gobernanza y seguridad de  los datos, facilitando el control de acceso y linaje de los datos.
 
