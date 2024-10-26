@@ -92,29 +92,29 @@ Se procede a realizar la integracion, SonarCloud solo permite analizar los repos
 Se crean los Token de GitHub y de Sonar, con el fin de realizar el proceso. Y se integran con el codigo correspondiente
 
 <div align="left">
-    <img src="Images/Integracion.png" width="600" height="800">
+    <img src="Images/Integracion.png" width="800" height="600">
 </div>
 
 Se corre el proceso mediante Actions
 
 
 <div align="left">
-    <img src="Images/Actions.png" width="600" height="800">
+    <img src="Images/Actions.png" width="800" height="600">
 </div>
 
 
 Nos arroja el resultado en SonarCloud, asi como las recomendaciones correspondientes.
 
 <div align="left">
-    <img src="Images/Resultado_1.png" width="600" height="800">
+    <img src="Images/Resultado_1.png" width="800" height="600">
 </div>
 
 <div align="left">
-    <img src="Images/Resultado_2.png" width="600" height="800">
+    <img src="Images/Resultado_2.png" width="800" height="600">
 </div>
 
 Al Analizarlas en detalles, vemos que la mayoria se refieren a mantenimiento
 
 <div align="left">
-    <img src="Images/Recomendaciones.png" width="600" height="800">
+    <img src="Images/Recomendaciones.png" width="800" height="600">
 </div>
