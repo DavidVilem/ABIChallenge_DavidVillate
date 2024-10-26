@@ -188,5 +188,12 @@ En las pruebas realizadas con SonarCloud, al analizar el nuevo codigo nos realiz
 Y por ultimo se realiza un despliegue en Docker. 
 
 <div align="left">
-    <img src="Images/Docker_API.png" width="600" height="600">
-</div>1200
+    <img src="Images/Docker_API.png" width="1200" height="600">
+</div>
+
+
+** Video de la explicacioon **
+
+https://drive.google.com/file/d/11M1og17uAvg_bjn7kMPyCrxoIEoIIq47/view?usp=sharing
+
+
