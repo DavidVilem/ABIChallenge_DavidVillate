@@ -122,9 +122,6 @@ Al Analizarlas en detalles, vemos que la mayoria se refieren a mantenimiento
 
 ## 4. ML Model Deployment
 
-
-## 4. ML Model Deployment
-
 Teniendo en cuenta que estos son los puntos a validar. 
 *** Puedes utilizar cualquiera de los siguientes modelos o cualquier otro que ya tengas (recuerda NO centrarte en
 el entrenamiento sino en el despliegue del modelo como una API que recibe una entrada y responde con la
@@ -165,31 +162,31 @@ Ahora bien. Se procede a realizar el despliegue de la aplicacion por FastApi, po
 Donde se registran los valores del modelo y se retorna el resultado, de igual manera puede seleccionar resultados individuales o por lotes, adicionalmente se tiene otro menu donde se pueden ver los resultado de los modelos, siento esto:
 
 <div align="left">
-    <img src="Images/Metricas.png" width="800" height="800">
+    <img src="Images/Metricas.png" width="1200" height="800">
 </div>
 
 Para guardar la informacion se realizo por SqLite y queda almacenada en un archivo que es predictions que contiene. Para poderlo visualizar, se hace por medio de la libreria SQLite Viewer
 
 <div align="left">
-    <img src="Images/Metricas.png" width="600" height="600">
+    <img src="Images/predictions.png" width="1200" height="600">
 </div>
 
 En las pruebas realizadas con SonarCloud, al analizar el nuevo codigo nos realiza nuevas recomendaciones.
 
 <div align="left">
-    <img src="Images/SonarCloud_3.png" width="600" height="600">
+    <img src="Images/SonarCloud_3.png" width="1200" height="600">
 </div>
 
 <div align="left">
-    <img src="Images/SonarCloud_1.png" width="600" height="600">
+    <img src="Images/SonarCloud_1.png" width="1200" height="600">
 </div>
 
 <div align="left">
-    <img src="Images/SonarCloud.png" width="600" height="600">
+    <img src="Images/SonarCloud.png" width="1200" height="600">
 </div>
 
 Y por ultimo se realiza un despliegue en Docker. 
 
 <div align="left">
     <img src="Images/Docker_API.png" width="600" height="600">
-</div>
+</div>1200
