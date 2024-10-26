@@ -75,3 +75,46 @@ Este proyecto sigue una estructura de ramas y tags para facilitar el desarrollo 
 <div align="left">
     <img src="Images/Github_Ramas.png" width="800" height="600">
 </div>
+
+
+## 3. Automation
+
+SonarCloud es una plataforma en la nube que proporciona análisis estático de código para asegurar la calidad y seguridad en proyectos de software.
+
+- Evalúa el código en busca de errores, bugs, y vulnerabilidades, proporcionando un reporte detallado de problemas potenciales.
+
+- Detecta problemas en tiempo de ejecución y previene futuros problemas al señalar código de baja calidad o con riesgos de seguridad.
+
+- Se integra fácilmente con plataformas de CI/CD como GitHub Actions
+
+Se procede a realizar la integracion, SonarCloud solo permite analizar los repositorios publicos, por lo cual se procede a realizar el cambio de temporal de la visibilidad del repositorio.
+
+Se crean los Token de GitHub y de Sonar, con el fin de realizar el proceso. Y se integran con el codigo correspondiente
+
+<div align="left">
+    <img src="Images/Integracion.png" width="600" height="600">
+</div>
+
+Se corre el proceso mediante Actions
+
+
+<div align="left">
+    <img src="Images/Actions.png" width="600" height="600">
+</div>
+
+
+Nos arroja el resultado en SonarCloud, asi como las recomendaciones correspondientes.
+
+<div align="left">
+    <img src="Images/Resultado_1.png" width="600" height="600">
+</div>
+
+<div align="left">
+    <img src="Images/Resultado_2.png" width="600" height="600">
+</div>
+
+Al Analizarlas en detalles, vemos que la mayoria se refieren a mantenimiento
+
+<div align="left">
+    <img src="Images/Recomendaciones.png" width="600" height="600">
+</div>
