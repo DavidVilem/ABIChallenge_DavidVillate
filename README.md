@@ -121,3 +121,75 @@ Al Analizarlas en detalles, vemos que la mayoria se refieren a mantenimiento
 
 
 ## 4. ML Model Deployment
+
+
+## 4. ML Model Deployment
+
+Teniendo en cuenta que estos son los puntos a validar. 
+*** Puedes utilizar cualquiera de los siguientes modelos o cualquier otro que ya tengas (recuerda NO centrarte en
+el entrenamiento sino en el despliegue del modelo como una API que recibe una entrada y responde con la
+salida del modelo)
+
+Su API debe cumplir los siguientes requisitos:
+- Debe estar escrita en Python siguiendo los estándares OOP.
+- Debe contener documentación en línea.
+- Debería realizar algunas pruebas utilizando Sonar Cloud.
+- La API podría ser capaz de realizar una estimación una a una o por lotes.
+- El código podría contener un archivo Docker compose para ejecutar el proyecto localmente.
+- Podrías ser capaz de almacenar cada estimación en cualquier base de datos.
+
+Se eligio la data de la pagina 
+
+https://www.kaggle.com/code/startupsci/titanic-data-science-solutions
+
+Aqui unicamente descargamos el notebook e hicimos pequeños ajuste spara que funcionara. Adicionalmete solo se añadieron unas lineas de codigo al final en el apartado de "update"
+
+<div align="left">
+    <img src="Images/Update.png" width="800" height="600">
+</div>
+
+En esta guardamos los resultados en un csv y una imagen para la cruva ROC. Y en la siguiente parte, guardamos los modelos en pkl
+
+<div align="left">
+    <img src="Images/modelos_pkl.png" width="800" height="600">
+</div>
+
+Por lo cual para los puntos 1 y 2, no se realiza, debido a que la documentacion ya la existia y solo se documentan las nuevas lineas de codigo.
+
+Ahora bien. Se procede a realizar el despliegue de la aplicacion por FastApi, por lo que en el archivo main se configura su estrcutura de llamado y se crean dos HTML que se encuentran en Templates. Siendo el resultado el siguiente
+
+<div align="left">
+    <img src="Images/Despliegue_Fast_Api.png" width="1200" height="800">
+</div>
+
+Donde se registran los valores del modelo y se retorna el resultado, de igual manera puede seleccionar resultados individuales o por lotes, adicionalmente se tiene otro menu donde se pueden ver los resultado de los modelos, siento esto:
+
+<div align="left">
+    <img src="Images/Metricas.png" width="800" height="800">
+</div>
+
+Para guardar la informacion se realizo por SqLite y queda almacenada en un archivo que es predictions que contiene. Para poderlo visualizar, se hace por medio de la libreria SQLite Viewer
+
+<div align="left">
+    <img src="Images/Metricas.png" width="600" height="600">
+</div>
+
+En las pruebas realizadas con SonarCloud, al analizar el nuevo codigo nos realiza nuevas recomendaciones.
+
+<div align="left">
+    <img src="Images/SonarCloud_3.png" width="600" height="600">
+</div>
+
+<div align="left">
+    <img src="Images/SonarCloud_1.png" width="600" height="600">
+</div>
+
+<div align="left">
+    <img src="Images/SonarCloud.png" width="600" height="600">
+</div>
+
+Y por ultimo se realiza un despliegue en Docker. 
+
+<div align="left">
+    <img src="Images/Docker_API.png" width="600" height="600">
+</div>
