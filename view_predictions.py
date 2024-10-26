@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from main import SessionLocal, Prediction  # Asegúrate de que este import funcione con tu estructura de archivos
+from main import SessionLocal, Prediction  
 
 def get_all_predictions():
     db = SessionLocal()

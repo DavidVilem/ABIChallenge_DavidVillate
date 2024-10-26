@@ -106,11 +106,11 @@ Se corre el proceso mediante Actions
 Nos arroja el resultado en SonarCloud, asi como las recomendaciones correspondientes.
 
 <div align="left">
-    <img src="Images/Resultado_1.png" width="600" height="400">
+    <img src="Images/Resultado_1.png" width="1200" height="400">
 </div>
 
 <div align="left">
-    <img src="Images/Resultado_2.png" width="600" height="400">
+    <img src="Images/Resultado_2.png" width="1200" height="400">
 </div>
 
 Al Analizarlas en detalles, vemos que la mayoria se refieren a mantenimiento
