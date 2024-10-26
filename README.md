@@ -43,7 +43,7 @@ Este proyecto sigue una estructura de ramas y tags para facilitar el desarrollo 
    - Se creó el primer tag, `v1.0.1`, en la rama `master` después de cargar un archivo en la nueva rama `feature-1`. Luego, `feature-1` fue mergeado con `master` bajo el tag `v1.0.1`.
 
 <div align="left">
-    <img src="Images/Feature_1.png" width="400" height="200">
+    <img src="Images/Feature_1.png" width="800" height="200">
 </div>
 
 2. **Creación de Ramas Secundarias**
@@ -56,24 +56,24 @@ Este proyecto sigue una estructura de ramas y tags para facilitar el desarrollo 
    - Se cargó un archivo en `develop` y, tras la revisión, se mergeó con `master` usando el tag `v1.1.0`.
 
 <div align="left">
-    <img src="Images/Develop.png" width="400" height="200">
+    <img src="Images/Develop.png" width="800" height="200">
 </div>
 
 5. **Conflictos en `feature-2` y Resolución con Tag `v1.2.1`**
    - Durante el trabajo en `feature-2`, surgieron conflictos al intentar integrarlo con `master`. Se resolvieron estos conflictos y se realizó un merge en `feature-2` con el tag `v1.2.1` para reflejar la solución.
 
 <div align="left">
-    <img src="Images/Feature_2.png" width="400" height="200">
+    <img src="Images/Feature_2.png" width="800" height="200">
 </div>
 
 6. **Finalización del Merge de `feature-2` a `master` con Tag `v1.2.2`**
    - Finalmente, tras resolver todos los conflictos, `feature-2` fue mergeada con `master` y consolidada bajo el tag `v1.2.2`, asegurando la integración estable de las nuevas funcionalidades.
 <div align="left">
-    <img src="Images/Master.png" width="400" height="200">
+    <img src="Images/Master.png" width="800" height="200">
 </div>
 
 
 **Arquitectura Lograda**
 <div align="left">
-    <img src="Images/Github_Ramas.png" width="400" height="200">
+    <img src="Images/Github_Ramas.png" width="800" height="200">
 </div>
