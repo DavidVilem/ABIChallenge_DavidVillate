@@ -31,8 +31,6 @@ Esta arquitectura asegura una solución escalable y segura para el procesamiento
 
 Este proyecto sigue una estructura de ramas y tags para facilitar el desarrollo y la trazabilidad de versiones.
 
-## Estructura del Flujo de Trabajo
-
 **Arquitectura Objetivo**
 <div align="left">
     <img src="Images/Objetivo.png" width="400" height="200">
@@ -75,5 +73,5 @@ Este proyecto sigue una estructura de ramas y tags para facilitar el desarrollo 
 
 **Arquitectura Lograda**
 <div align="left">
-    <img src="Images/Github_Ramas.png" width="800" height="200">
+    <img src="Images/Github_Ramas.png" width="800" height="600">
 </div>
