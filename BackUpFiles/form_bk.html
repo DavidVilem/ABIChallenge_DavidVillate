@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Predicción de Supervivencia en el Titanic</title>
+</head>
+<body>
+    <h1>Predicción de Supervivencia en el Titanic</h1>
+    
+    <!-- Selección de modo -->
+    <label>
+        <input type="radio" name="mode" id="single" value="single" onclick="toggleInputMode()" checked>
+        Individual
+    </label>
+    <label>
+        <input type="radio" name="mode" id="multiple" value="multiple" onclick="toggleInputMode()">
+        Múltiple
+    </label>
+    
+    <!-- Selección de modelo -->
+    <form id="single-form" method="post" action="/predict_single">
+        <label for="model_name">Selecciona el modelo:</label>
+        <select name="model_name" id="model_name">
+            <option value="Random Forest">Random Forest</option>
+            <option value="Logistic Regression">Logistic Regression</option>
+            <option value="Support Vector Machine">Support Vector Machine</option>
+            <!-- Agrega otras opciones de modelo si es necesario -->
+        </select><br><br>
+
+        <!-- Formulario para predicción individual -->
+        <div id="single-inputs">
+            <label for="Pclass">Pclass:</label>
+            <input type="number" name="Pclass" required><br><br>
+
+            <label for="Sex">Sex:</label>
+            <input type="number" name="Sex" required><br><br>
+
+            <label for="Age">Age:</label>
+            <input type="number" name="Age" required><br><br>
+
+            <label for="Fare">Fare:</label>
+            <input type="number" name="Fare" required><br><br>
+
+            <label for="Embarked">Embarked:</label>
+            <input type="number" name="Embarked" required><br><br>
+
+            <label for="Title">Title:</label>
+            <input type="number" name="Title" required><br><br>
+
+            <label for="IsAlone">IsAlone:</label>
+            <input type="number" name="IsAlone" required><br><br>
+
+            <label for="Age_Class">Age_Class:</label>
+            <input type="number" name="Age_Class" required><br><br>
+        </div>
+
+        <!-- Caja de texto para predicción en lote -->
+        <div id="json-input" style="display: none;">
+            <label for="json_data">JSON Input:</label><br>
+            <textarea name="json_data" rows="10" cols="50" placeholder='[{"Pclass":3,"Sex":1,"Age":22,"Fare":7,"Embarked":0,"Title":1,"IsAlone":1,"Age_Class":66}, {"Pclass":1,"Sex":0,"Age":38,"Fare":71,"Embarked":1,"Title":2,"IsAlone":0,"Age_Class":38}]'></textarea><br><br>
+        </div>
+
+        <button type="submit">Predecir</button>
+    </form>
+
+    {% if result %}
+        <h2>{{ result }}</h2>
+    {% endif %}
+
+    {% if error %}
+        <h2 style="color: red;">{{ error }}</h2>
+    {% endif %}
+
+    <script>
+        function toggleInputMode() {
+            const isMultiple = document.getElementById("multiple").checked;
+            const singleInputs = document.getElementById("single-inputs");
+            const jsonInput = document.getElementById("json-input");
+            const form = document.getElementById("single-form");
+
+            singleInputs.style.display = isMultiple ? "none" : "block";
+            jsonInput.style.display = isMultiple ? "block" : "none";
+            form.action = isMultiple ? "/predict_batch" : "/predict_single";
+
+            // Obtener todos los campos de entrada individuales
+            const inputFields = singleInputs.querySelectorAll('input');
+
+            // Agregar o remover el atributo 'required' según el modo
+            inputFields.forEach(function(input) {
+                if (isMultiple) {
+                    input.removeAttribute('required');
+                } else {
+                    input.setAttribute('required', '');
+                }
+            });
+
+            console.log('toggleInputMode called, isMultiple=', isMultiple);
+            console.log('Form action set to:', form.action);
+        }
+    </script>
+</body>
+</html>

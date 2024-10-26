@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Rendimiento de Modelos</title>
+    <style>
+        /* Estilos básicos para centrar y mejorar la apariencia */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Permitir que el contenido comience desde la parte superior */
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+            background-image: url('/images/rendimiento.jpg'); /* Imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            overflow-y: auto; /* Habilitar desplazamiento vertical */
+        }
+
+        /* Contenedor principal del rendimiento */
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto; /* Espacio arriba y abajo */
+        }
+
+        /* Estilos para los títulos y subtítulos */
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #004080;
+            margin: 20px 0;
+        }
+
+        /* Estilos para la tabla */
+        table {
+            margin: 0 auto 20px auto;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 100%; /* Evitar que la tabla se desborde */
+            overflow-x: auto; /* Habilitar desplazamiento horizontal si es necesario */
+            font-size: 15px; /* Ajuste de tamaño para visibilidad */
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #004080;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        /* Imagen de la curva ROC */
+        .roc-image {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Botón de regreso */
+        .button-regreso {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #004080;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button-regreso:hover {
+            background-color: #003366;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rendimiento de los Modelos de Predicción</h1>
+
+        <!-- Mostrar tabla de métricas -->
+        <h2>Métricas de Evaluación</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Modelo</th>
+                    <th>Exactitud</th>
+                    <th>Precisión</th>
+                    <th>Recall</th>
+                    <th>Especificidad</th>
+                    <th>AUC</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for _, row in metrics_data.iterrows() %}
+                    <tr>
+                        <td>{{ row['Model'] }}</td>
+                        <td>{{ row['Accuracy'] }}</td>
+                        <td>{{ row['Precision'] }}</td>
+                        <td>{{ row['Recall'] }}</td>
+                        <td>{{ row['Specificity'] }}</td>
+                        <td>{{ row['AUC'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Mostrar imagen de la curva ROC -->
+        <h2>Curvas ROC de los Modelos</h2>
+        <img src="/performance_files/roc_curves.png" alt="Curvas ROC para todos los modelos" class="roc-image">
+
+        <!-- Botón para regresar al formulario principal -->
+        <a href="/form" class="button-regreso">Regresar al Formulario</a>
+    </div>
+</body>
+</html>
