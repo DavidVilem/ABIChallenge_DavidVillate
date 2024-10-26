@@ -57,10 +57,11 @@ app.mount("/images", StaticFiles(directory="Images"), name="images")
 app.mount("/Titanic", StaticFiles(directory="Titanic"), name="Titanic")
 
 # Montar el directorio performance como estático para acceder a archivos en /performance
-app.mount("/performance_files", StaticFiles(directory="performance"), name="performance_files")
+app.mount("/performance_files", StaticFiles(directory="Performance"), name="performance_files")
+
 
 # Configuración de plantillas
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="Templates")
 
 # Instancia de TitanicModelAPI con la carpeta que contiene los modelos
 titanic_model_api = TitanicModelAPI("Titanic/model_files")
@@ -70,6 +71,7 @@ titanic_model_api = TitanicModelAPI("Titanic/model_files")
 async def form(request: Request):
     """Renderiza el formulario de entrada para predicción de un solo pasajero"""
     return templates.TemplateResponse("form.html", {"request": request})
+
 
 # Dependencia para la sesión de la base de datos
 def get_db():
@@ -144,11 +146,21 @@ async def predict_batch(
         error_message = f"Ocurrió un error: {str(e)}"
         return templates.TemplateResponse("form.html", {"request": request, "error": error_message})
 
+from fastapi import HTTPException
+
 @app.get("/performance")
 async def performance(request: Request):
-    # Leer el archivo CSV con métricas desde la carpeta "performance"
-    metrics_df = pd.read_csv("performance/metrics_df.csv")
+    try:
+        # Intentar leer el archivo CSV
+        metrics_df = pd.read_csv("Performance/metrics_df.csv")
+    except FileNotFoundError:
+        error_message = "El archivo de métricas no fue encontrado."
+        return templates.TemplateResponse("error.html", {"request": request, "error": error_message})
+    except Exception as e:
+        error_message = f"Ocurrió un error: {str(e)}"
+        return templates.TemplateResponse("error.html", {"request": request, "error": error_message})
     return templates.TemplateResponse("performance.html", {"request": request, "metrics_data": metrics_df})
+
 
 
 # Configuración de la base de datos
